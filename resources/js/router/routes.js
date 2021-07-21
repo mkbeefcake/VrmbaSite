@@ -23,5 +23,6 @@ export default [
     ]
   },
 
+  { path: '/meeting', name: 'meeting', component: page('meeting/meeting.vue') },
   { path: '*', component: page('errors/404.vue') }
 ]

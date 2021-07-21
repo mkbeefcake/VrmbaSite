@@ -1,6 +1,6 @@
 {
-    "name": "cretueusebiu/laravel-vue-spa",
-    "description": "A Laravel-Vue SPA starter project template.",
+    "name": "VRMBATestWebsite",
+    "description": "A VRMBA Test WebSite",
     "keywords": ["spa", "laravel", "vue"],
     "license": "MIT",
     "type": "project",
