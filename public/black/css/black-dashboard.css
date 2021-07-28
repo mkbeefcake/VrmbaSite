@@ -13384,7 +13384,7 @@ img {
   padding: 10px 30px 10px 15px;
   width: 100%;
   z-index: 1050;
-  background: #1a1e34;
+  background: #262626;
 }
 
 .navbar .photo {
@@ -13416,6 +13416,7 @@ img {
 .navbar.navbar-absolute {
   position: absolute;
   z-index: 1050;
+  height: 120px;
 }
 
 .navbar.navbar-transparent {
@@ -14851,13 +14852,13 @@ table.tablesorter thead tr .headerSortDown {
 
 .sidebar,
 .off-canvas-sidebar {
-  background: #2d2d2d;
-  background: -webkit-linear-gradient(0deg, #2d2d2d 0%, #252525 100%);
+  background: #181818;
+  /* background: -webkit-linear-gradient(0deg, #2d2d2d 0%, #252525 100%);
   background: -o-linear-gradient(0deg, #2d2d2d 0%, #252525 100%);
   background: -moz-linear-gradient(0deg, #2d2d2d 0%, #252525 100%);
-  background: linear-gradient(0deg, #2d2d2d 0%, #252525 100%);
+  background: linear-gradient(0deg, #2d2d2d 0%, #252525 100%); */
   height: calc(100vh - 90px);
-  width: 230px;
+  width: 300px;
   position: fixed;
   top: 0;
   left: 0;
@@ -14866,9 +14867,9 @@ table.tablesorter thead tr .headerSortDown {
   background-position: center center;
   display: block;
   box-shadow: 0px 0px 45px 0px rgba(0, 0, 0, 0.6);
-  margin-top: 10px;
-  margin-left: 20px;
-  border-radius: 5px;
+  /* margin-top: 10px;
+  margin-left: 20px; */
+  /* border-radius: 5px; */
   transition: 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
 }
 
@@ -15011,9 +15012,9 @@ table.tablesorter thead tr .headerSortDown {
   display: block;
   text-decoration: none;
   position: relative;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   cursor: pointer;
-  font-size: 0.62475rem;
+  font-size: 15px;
   padding: 10px 8px;
   line-height: 1.625rem;
 }
@@ -15039,6 +15040,14 @@ table.tablesorter thead tr .headerSortDown {
 .off-canvas-sidebar .nav li:hover:not(.active)>a i,
 .off-canvas-sidebar .nav li:focus:not(.active)>a i {
   color: #ffffff;
+}
+
+.sidebar .nav li:hover:not(.active),
+.sidebar .nav li:focus:not(.active),
+.off-canvas-sidebar .nav li:hover:not(.active),
+.off-canvas-sidebar .nav li:focus:not(.active) {
+  color: #ffffff;
+  background-color: #262626;
 }
 
 .sidebar .nav li.active>a:not([data-toggle="collapse"]),
@@ -15172,7 +15181,7 @@ table.tablesorter thead tr .headerSortDown {
   right: 15px;
   height: 1px;
   width: calc(100% - 30px);
-  background: rgba(255, 255, 255, 0.5);
+  /* background: rgba(255, 255, 255, 0.5); */
 }
 
 .sidebar .logo p,
@@ -15320,7 +15329,7 @@ table.tablesorter thead tr .headerSortDown {
   width: 100%;
   min-height: 100vh;
   border-top: 2px solid #9dac37;
-  background: linear-gradient(#2d2d2d, #2d2d24);
+  background: linear-gradient(#323232, #303030);
   -webkit-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
   -moz-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
   -o-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);

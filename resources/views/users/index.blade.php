@@ -33,8 +33,8 @@
         <meta property="og:site_name" content="Creative Tim" />
         <title>{{ config('app.name', 'Black Dashboard Laravel - Free Laravel Preset') }}</title>
         <!-- Favicon -->
-        <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('black') }}/img/apple-icon.png">
-        <link rel="icon" type="image/png" href="{{ asset('black') }}/img/favicon.png">
+        <!-- <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('black') }}/img/apple-icon.png">
+        <link rel="icon" type="image/png" href="{{ asset('black') }}/img/favicon.png"> -->
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
         <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
@@ -141,7 +141,7 @@
                             </div>
                             
             <div class="main-panel">
-                    <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
+                    <nav class="navbar navbar-expand-lg navbar-absolute ">
                             <div class="container-fluid">
                                 <div class="navbar-wrapper">
                                     <div class="navbar-toggle d-inline">
