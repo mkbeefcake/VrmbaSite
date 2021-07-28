@@ -1,25 +1,27 @@
 {
-    "name": "VRMBATestWebsite",
-    "description": "A VRMBA Test WebSite",
-    "keywords": ["spa", "laravel", "vue"],
-    "license": "MIT",
+    "name": "laravel/laravel",
     "type": "project",
+    "description": "The Laravel Framework.",
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
+    "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
-        "laravel/framework": "^8.34",
-        "laravel/socialite": "^5.2",
-        "laravel/tinker": "^2.6",
-        "laravel/ui": "^3.2",
-        "tymon/jwt-auth": "^1.0.2"
+        "laravel-frontend-presets/black-dashboard": "^1.0",
+        "laravel/framework": "^8.12",
+        "laravel/tinker": "^2.5",
+        "laravel/ui": "^3.1",
+        "predis/predis": "^1.1"
     },
     "require-dev": {
-        "doctrine/dbal": "^2.12",
         "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.9.1",
-        "laravel/dusk": "^6.8",
+        "laravel/sail": "^0.0.5",
         "mockery/mockery": "^1.4.2",
         "nunomaduro/collision": "^5.0",
         "phpunit/phpunit": "^9.3.3"
@@ -31,16 +33,14 @@
     },
     "extra": {
         "laravel": {
-            "dont-discover": [
-              "laravel/dusk"
-            ]
+            "dont-discover": []
         }
     },
     "autoload": {
         "psr-4": {
-          "App\\": "app/",
-          "Database\\Factories\\": "database/factories/",
-          "Database\\Seeders\\": "database/seeders/"
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
         }
     },
     "autoload-dev": {
@@ -59,8 +59,7 @@
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
         "post-create-project-cmd": [
-            "@php artisan key:generate --ansi",
-            "@php artisan jwt:secret --force --ansi"
+            "@php artisan key:generate --ansi"
         ]
     }
 }

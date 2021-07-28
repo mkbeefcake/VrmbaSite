@@ -1,23 +1,23 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import actions from './actions'
+import getters from './getters'
+import mutations from './mutations'
+import VuexPersist from 'vuex-persist';
 
-Vue.use(Vuex)
 
-// Load store modules dynamically.
-const requireContext = require.context('./modules', false, /.*\.js$/)
+const state = {
+    cameras : [],
+    selectedCameraId : "",
+}
 
-const modules = requireContext.keys()
-  .map(file =>
-    [file.replace(/(^.\/)|(\.js$)/g, ''), requireContext(file)]
-  )
-  .reduce((modules, [name, module]) => {
-    if (module.namespaced === undefined) {
-      module.namespaced = true
-    }
-
-    return { ...modules, [name]: module }
-  }, {})
-
-export default new Vuex.Store({
-  modules
-})
+const vuexLocalStorage = new VuexPersist({
+    key: 'vuex',
+    storage: window.localStorage, 
+});
+export default {
+    state, 
+    getters,
+    actions,
+    mutations,
+    plugins: [vuexLocalStorage.plugin],
+   
+}
