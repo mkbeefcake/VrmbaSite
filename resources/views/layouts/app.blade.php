@@ -21,8 +21,8 @@
         <link href="{{ asset('black') }}/css/theme.css" rel="stylesheet" />
 
         <script src="{{ asset('black') }}/js/core/jquery.min.js"></script>
-        <script src="{{ asset('black') }}/js/core/popper.min.js"></script>
-        <script src="{{ asset('black') }}/js/core/bootstrap.min.js"></script>
+        <!-- <script src="{{ asset('black') }}/js/core/popper.min.js"></script>
+        <script src="{{ asset('black') }}/js/core/bootstrap.min.js"></script> -->
         <script src="{{ asset('black') }}/js/plugins/perfect-scrollbar.jquery.min.js"></script>
         <!--  Google Maps Plugin    -->
         <!-- Place this tag in your head or just before your close body tag. -->
