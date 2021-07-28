@@ -8,7 +8,7 @@
                     <div class="col-lg-5 col-md-6">
                         <h1 class="text-white">{{ __('Welcome!') }}</h1>
                         <p class="text-lead text-light">
-                            {{ __('Blackmagic Camera Control Server via bluetooth') }}
+                            {{ __('BonVR website') }}
                         </p>
                     </div>
                 </div>

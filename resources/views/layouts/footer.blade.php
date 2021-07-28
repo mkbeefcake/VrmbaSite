@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="copyright">
             &copy; {{ now()->year }} {{ __('made by') }} 
-            <a href="https://quicklink.tv" target="_blank">{{ __('Quicklink.tv') }}</a>
+            <a href="" target="_blank">{{ __('bonVR') }}</a>
         </div>
     </div>
 </footer>

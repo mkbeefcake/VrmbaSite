@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="col-md-10 text-center ml-auto mr-auto">
-        <h3 class="mb-5">Blackmagic Camera Control Server</h3>
+        <h3 class="mb-5">BonVR website</h3>
     </div>
     <div class="col-md-8 ml-auto mr-auto">
         <form class="form" method="post" action="{{ route('login') }}">

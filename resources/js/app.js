@@ -24,20 +24,7 @@ Vue.use(Vuex)
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('lens-component', require('./components/LensComponent.vue').default);
-Vue.component('recordvideo-component', require('./components/RecordVideoComponent.vue').default);
-Vue.component('video-component', require('./components/VideoComponent.vue').default);
-Vue.component('display-component', require('./components/DisplayComponent.vue').default);
-Vue.component('audio-component', require('./components/AudioComponent.vue').default);
-Vue.component('output-component', require('./components/OutputComponent.vue').default);
-Vue.component('tally-component', require('./components/TallyComponent.vue').default);
-Vue.component('configuration-component', require('./components/ConfigurationComponent.vue').default);
-Vue.component('colorcorrection-component', require('./components/ColorCorrectionComponent.vue').default);
-Vue.component('ptzcontrol-component', require('./components/PTZControlComponent.vue').default);
-
-Vue.component('systeminfo-component', require('./components/SystemInfoComponent.vue').default);
-Vue.component('cameralist-component', require('./components/CameraListComponent.vue').default);
+// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
