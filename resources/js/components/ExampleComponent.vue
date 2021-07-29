@@ -1,14 +1,10 @@
 <template>
-    <div class="container">
+    <div class="container"  v-if="this.isShow">
         <div class="row justify-content-center">
             <div class="card">
                 <div class="card-header">Example Component</div>
 
                 <div class="card-body">
-
-<!-- <nav class="navbar navbar-expand-lg navbar-absolute">
-    <div class="container-fluid">
-                        <div class="collapse navbar-collapse" id="navigation"> -->
 
                     <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-expanded="false">
@@ -21,9 +17,6 @@
                     </ul>
                     </div>
 
-                <!-- </div>
-    </div>
-</nav> -->
 
                 </div>
             </div>
@@ -32,9 +25,14 @@
 </template>
 
 <script>
-    export default {
-        mounted() {
-            console.log('Component mounted.')
-        }
-    }
+import { mapState } from 'vuex'
+export default {
+    mounted() {
+        console.log('Component mounted: Selected MenuID = ' + this.selectedMenuId);
+    },
+    computed: mapState({
+        selectedMenuId: state => state.selectedMenuId,
+        isShow : state => state.selectedMenuId == "Example",
+    }),
+}
 </script>

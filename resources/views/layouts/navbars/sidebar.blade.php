@@ -6,35 +6,37 @@
         <div>
             <ul class="nav sidebar-nav" id="menuList">
                 <div style="height:60px"></div>
-                <li onClick="onMenuSelected(this)">
-                    <a href="#" class="active"><i class="fa fa-fw fa-home"></i> Dashboard</a>
+                <li onClick="onMenuSelected(this)" id="Dashboard">
+                    <a href="home" class="active"><i class="fa fa-fw fa-home"></i> Dashboard</a>
                 </li>
                 <div style="height:30px"></div>
-                <li onClick="onMenuSelected(this)">
-                    <a href="#"><i class="fa fa-fw fa-comment"></i> Chat</a>
+                <li onClick="onMenuSelected(this)" id="Chat">
+                    <a href="home"><i class="fa fa-fw fa-comment"></i> Chat</a>
                 </li>
-                <li onClick="onMenuSelected(this)">
-                    <a href="#"><i class="fa fa-fw fa-users"></i> Groups</a>
+                <li onClick="onMenuSelected(this)" id="Groups">
+                    <a href="home"><i class="fa fa-fw fa-users"></i> Groups</a>
                 </li>
-                <li onClick="onMenuSelected(this)">
-                    <a href="#"><i class="fa fa-fw fa-file"></i> Files</a>
-                </li>
-                <div style="height:30px"></div>
-                <li onClick="onMenuSelected(this)">
-                    <a href="#"><i class="fa fa-fw fa-user"></i> Contacts</a>
-                </li>
-                <li onClick="onMenuSelected(this)">
-                    <a href="#"><i class="fa fa-fw fa-calendar"></i> Callender</a>
-                </li>
-                <li onClick="onMenuSelected(this)">
-                    <a href="#"><i class="fa fa-fw fa-video"></i> Schedule</a>
+                <li onClick="onMenuSelected(this)" id="Files">
+                    <a href="home"><i class="fa fa-fw fa-file"></i> Files</a>
                 </li>
                 <div style="height:30px"></div>
-                <li onClick="onMenuSelected(this)">
-                    <a href="#"><i class="fa fa-fw fa-cog"></i> Settings</a>
+                <li onClick="onMenuSelected(this)" id="Contacts">
+                    <a href="home"><i class="fa fa-fw fa-user"></i> Contacts</a>
                 </li>
-                <li onClick="onMenuSelected(this)">
-                    <a href="#"><i class="fa fa-fw fa-sign-out-alt"></i> Logout</a>
+                <li onClick="onMenuSelected(this)" id="Calendar">
+                    <a href="home"><i class="fa fa-fw fa-calendar"></i> Callender</a>
+                </li>
+                <li onClick="onMenuSelected(this)" id="Schedule">
+                    <a href="meeting"><i class="fa fa-fw fa-video"></i> Schedule</a>
+                </li>
+                <div style="height:30px"></div>
+                <li onClick="onMenuSelected(this)" id="Settings">
+                    <a href="home"><i class="fa fa-fw fa-cog"></i> Settings</a>
+                </li>
+                <li>
+                    <a href="{{ route('logout') }}"onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <i class="fa fa-fw fa-sign-out-alt"></i> Logout
+                    </a>
                 </li>
             </ul>
         </div>
@@ -48,7 +50,8 @@ function onMenuSelected(selected) {
     for (let i = 0; i < cameras.length; i++) {
         cameras[i].classList.remove('active');
     }    
-
+    
+    VueStore.commit('updateSelectedMenuId', selected.id);
     selected.classList.add('active');
 }    
 </script>

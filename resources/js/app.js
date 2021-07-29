@@ -25,6 +25,7 @@ Vue.use(Vuex)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('meeting-component', require('./components/MeetingComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -42,7 +43,7 @@ const app = new Vue({
     store: store,
 });
 
-const sidebar = new Vue({
-    el: '#sidebar',
-    store: store
-});
+// const sidebar = new Vue({
+//     el: '#sidebar',
+//     store: store
+// });
