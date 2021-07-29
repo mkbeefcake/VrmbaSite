@@ -13414,7 +13414,7 @@ img {
 }
 
 .navbar.navbar-absolute {
-  position: absolute;
+  /* position: absolute; */
   z-index: 1050;
   height: 120px;
 }
@@ -14857,7 +14857,7 @@ table.tablesorter thead tr .headerSortDown {
   background: -o-linear-gradient(0deg, #2d2d2d 0%, #252525 100%);
   background: -moz-linear-gradient(0deg, #2d2d2d 0%, #252525 100%);
   background: linear-gradient(0deg, #2d2d2d 0%, #252525 100%); */
-  height: calc(100vh - 90px);
+  height: calc(100vh);
   width: 300px;
   position: fixed;
   top: 0;
