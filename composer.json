@@ -1,5 +1,5 @@
 {
-    "name": "VRMBATestWebsite",
+    "name": "laravel/vrmba",
     "description": "A VRMBA Test WebSite",
     "keywords": ["spa", "laravel", "vue"],
     "license": "MIT",
