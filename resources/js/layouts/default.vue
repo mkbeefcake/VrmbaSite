@@ -4,10 +4,8 @@
     <div class="main-panel">
       <navbar />
       <sidebar />
-      
-      <div class="content">
-        <child />
-      </div>
+
+      <child />
     </div>
   </div>
 </template>

@@ -1,4 +1,5 @@
 <template>
+  <div class="container" style="padding-top:120px">
   <div class="row">
     <div class="col-lg-8 m-auto">
       <card :title="$t('verify_email')">
@@ -22,6 +23,7 @@
         </template>
       </card>
     </div>
+  </div>
   </div>
 </template>
 

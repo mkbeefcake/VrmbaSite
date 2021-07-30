@@ -7,35 +7,51 @@
         <div>
             <ul class="nav sidebar-nav" id="menuList">
                 <div style="height:60px"></div>
-                <li onClick="onMenuSelected(this)" id="Dashboard">
-                    <a href="#" class="active"><i class="fa fa-fw fa-home"></i> Dashboard</a>
+                <li v-on:click="onMenuSelected($event)" id="Dashboard">
+                    <router-link :to="{ name: 'home' }" class="nav-link" active-class="active">
+                        <i class="fa fa-fw fa-home"></i> Dashboard
+                    </router-link>
                 </li>
                 <div style="height:30px"></div>
-                <li onClick="onMenuSelected(this)" id="Chat">
-                    <a href="#"><i class="fa fa-fw fa-comment"></i> Chat</a>
+                <li v-on:click="onMenuSelected($event)" id="Chat">
+                    <router-link :to="{ name: 'chat' }" class="nav-link" active-class="active">
+                        <i class="fa fa-fw fa-comment"></i> Chat
+                    </router-link>
                 </li>
-                <li onClick="onMenuSelected(this)" id="Groups">
-                    <a href="#"><i class="fa fa-fw fa-users"></i> Groups</a>
+                <li v-on:click="onMenuSelected($event)" id="Groups">
+                    <router-link :to="{ name: 'groups' }" class="nav-link" active-class="active">
+                        <i class="fa fa-fw fa-users"></i> Groups
+                    </router-link>
                 </li>
-                <li onClick="onMenuSelected(this)" id="Files">
-                    <a href="#"><i class="fa fa-fw fa-file"></i> Files</a>
-                </li>
-                <div style="height:30px"></div>
-                <li onClick="onMenuSelected(this)" id="Contacts">
-                    <a href="#"><i class="fa fa-fw fa-user"></i> Contacts</a>
-                </li>
-                <li onClick="onMenuSelected(this)" id="Calendar">
-                    <a href="#"><i class="fa fa-fw fa-calendar"></i> Callender</a>
-                </li>
-                <li onClick="onMenuSelected(this)" id="Schedule">
-                    <a href="meeting"><i class="fa fa-fw fa-video"></i> Schedule</a>
+                <li v-on:click="onMenuSelected($event)" id="Files">
+                    <router-link :to="{ name: 'files' }" class="nav-link" active-class="active">
+                        <i class="fa fa-fw fa-file"></i> Files
+                    </router-link>
                 </li>
                 <div style="height:30px"></div>
-                <li onClick="onMenuSelected(this)" id="Settings">
-                    <a href="#"><i class="fa fa-fw fa-cog"></i> Settings</a>
+                <li v-on:click="onMenuSelected($event)" id="Contacts">
+                    <router-link :to="{ name: 'contacts' }" class="nav-link" active-class="active">
+                        <i class="fa fa-fw fa-user"></i> Contacts
+                    </router-link>
+                </li>
+                <li v-on:click="onMenuSelected($event)" id="Calendar">
+                    <router-link :to="{ name: 'calendar' }" class="nav-link" active-class="active">
+                        <i class="fa fa-fw fa-calendar"></i> Callender
+                    </router-link>
+                </li>
+                <li v-on:click="onMenuSelected($event)" id="Schedule">
+                    <router-link :to="{ name: 'meeting' }" class="nav-link" active-class="active">
+                        <i class="fa fa-fw fa-video"></i> Schedule
+                    </router-link>                        
+                </li>
+                <div style="height:30px"></div>
+                <li v-on:click="onMenuSelected($event)" id="Settings">                    
+                    <router-link :to="{ name: 'settings' }" class="nav-link" active-class="active">
+                        <i class="fa fa-fw fa-cog"></i> Settings
+                    </router-link>
                 </li>
                 <li>
-                    <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <a href="#" class="nav-link" @click.prevent="logout">                    
                         <i class="fa fa-fw fa-sign-out-alt"></i> Logout
                     </a>
                 </li>
@@ -55,18 +71,26 @@ export default {
   computed: mapGetters({
     user: 'auth/user'
   }),
+  methods: {
+    async logout () {
+      // Log out the user.
+      await this.$store.dispatch('auth/logout')
+
+      // Redirect to login.
+      this.$router.push({ name: 'login' })
+    },
+    onMenuSelected: function(event){
+        // console.log(event);
+
+        var menulist = document.getElementById("menuList").getElementsByTagName("li");
+        for (let i = 0; i < menulist.length; i++) {
+            menulist[i].classList.remove('active');
+        }
+        event.target.parentElement.classList.add('active');
+    },
+  }
 }
 
-function onMenuSelected(selected) {
-    console.log("Menu selected");
-    var cameras = document.getElementById("menuList").getElementsByTagName("li");
-    for (let i = 0; i < cameras.length; i++) {
-        cameras[i].classList.remove('active');
-    }    
-    
-    // VueStore.commit('updateSelectedMenuId', selected.id);
-    selected.classList.add('active');
-}    
 
 </script>
 

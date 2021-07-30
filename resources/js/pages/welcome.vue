@@ -18,7 +18,7 @@
 
     <div class="text-center">
       <div class="title mb-4">
-        {{ title }}
+        <img src="http://localhost:8000/black/img/title-avatar.png" alt="VRMBA">
       </div>
 
     </div>

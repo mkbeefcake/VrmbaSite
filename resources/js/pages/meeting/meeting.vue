@@ -1,4 +1,5 @@
 <template>
+<div class="content">
 <div class="row">
     <div class="col-lg-8 m-auto">
         <card>
@@ -10,6 +11,7 @@
         </card>
     </div>
 </div>
+</div>
 </template>
 <script>
 
@@ -20,7 +22,7 @@ export default {
 
     },
 
-    middleware: 'guest',
+    middleware: 'auth',
 
     data() {
         return {

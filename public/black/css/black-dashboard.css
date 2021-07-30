@@ -200,7 +200,7 @@ a {
 }
 
 a:hover {
-  color: #9dac30;
+  color: #2af597;
   text-decoration: none;
 }
 
@@ -3291,7 +3291,7 @@ fieldset:disabled a.btn {
 }
 
 .btn-link:hover {
-  color: #9dac30;
+  color: #29f496;
   text-decoration: none;
   background-color: transparent;
   border-color: transparent;
@@ -10721,7 +10721,7 @@ fieldset[disabled] .navbar .navbar-nav>a.btn.active {
 .btn-primary:active:hover,
 .btn-primary.active:focus,
 .btn-primary.active:hover {
-  background-color: #9dac30 !important;
+  background-color: #2af597 !important;
   background-image: linear-gradient(to bottom left, #2af597, #29f496, #2af597) !important;
   background-image: -webkit-linear-gradient(to bottom left, #2af597, #29f496, #2af597) !important;
   background-image: -o-linear-gradient(to bottom left, #2af597, #29f496, #2af597) !important;
@@ -10797,11 +10797,11 @@ fieldset[disabled] .btn-primary.active {
 .btn-primary.btn-simple.active:not(:disabled):not(.disabled):active {
   color: #ffffff;
   border-color: #2af597;
-  background-image: linear-gradient(to bottom left, #2af597, #9dac30, #2af597) !important;
-  background-image: -webkit-linear-gradient(to bottom left, #2af597, #9dac30, #2af597) !important;
-  background-image: -o-linear-gradient(to bottom left, #2af597, #9dac30, #2af597) !important;
-  background-image: -moz-linear-gradient(to bottom left, #2af597, #9dac30, #2af597) !important;
-  background-color: #9dac30 !important;
+  background-image: linear-gradient(to bottom left, #2af597, #29f496, #2af597) !important;
+  background-image: -webkit-linear-gradient(to bottom left, #2af597, #29f496, #2af597) !important;
+  background-image: -o-linear-gradient(to bottom left, #2af597, #29f496, #2af597) !important;
+  background-image: -moz-linear-gradient(to bottom left, #2af597, #29f496, #2af597) !important;
+  background-color: #2af597 !important;
   box-shadow: none;
 }
 
@@ -11464,13 +11464,13 @@ fieldset[disabled] .btn-neutral.active {
 .show>.btn-neutral.dropdown-toggle:focus,
 .show>.btn-neutral.dropdown-toggle:hover {
   background-color: #ffffff;
-  color: #9dac30;
+  color: #2af597;
   box-shadow: none;
 }
 
 .btn-neutral:hover,
 .btn-neutral:focus {
-  color: #9dac30;
+  color: #2af597;
 }
 
 .btn-neutral:hover:not(.nav-link),
@@ -15349,7 +15349,7 @@ table.tablesorter thead tr .headerSortDown {
 }
 
 .main-panel>.content {
-  padding: 140px 30px 30px 320px;
+  padding: 30px 30px 30px 320px;
   min-height: calc(100vh - 70px);
 }
 
