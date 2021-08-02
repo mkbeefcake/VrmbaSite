@@ -1,4 +1,5 @@
 <template>
+  <div class="content">
   <div class="row">
     <div class="col-md-3">
       <card :title="$t('settings')" class="settings-card">
@@ -18,6 +19,7 @@
         <router-view />
       </transition>
     </div>
+  </div>
   </div>
 </template>
 

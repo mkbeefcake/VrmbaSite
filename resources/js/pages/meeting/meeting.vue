@@ -1,25 +1,26 @@
 <template>
 <div class="content">
-<div class="row">
-    <div class="col-lg-8 m-auto">
-        <card>
-            <div class="form-group row">
-                <label class="col-md-4 col-form-label text-md-left">Meeting invitation link: </label>
-                <label class="col-md-4 col-form-label text-md-left">{{this.meetingLink}}</label>
-                <label class="btn btn-primary btn-simple active" v-on:click="onStartMeeting">Start Meeting</label>
-            </div>
-        </card>
+    <div class="row">
+        <div class="col-lg-7">
+            <card>
+                <div class="form-group row">
+                    <label class="col-md-4 col-form-label text-md-left">Meeting invitation link: </label>
+                    <label class="col-md-4 col-form-label text-md-left">{{this.meetingLink}}</label>
+                    <label class="btn btn-primary btn-simple active" v-on:click="onStartMeeting">Start Meeting</label>
+                </div>
+            </card>
+        </div>
+        <div class="col-lg-5">
+        </div>
     </div>
-</div>
 </div>
 </template>
 <script>
-
 import ProtocolCheck from '../../misc/protocolcheck'
 export default {
 
     components: {
-
+        
     },
 
     middleware: 'auth',

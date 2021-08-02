@@ -7,7 +7,7 @@
         <div>
             <ul class="nav sidebar-nav" id="menuList">
                 <div style="height:60px"></div>
-                <li v-on:click="onMenuSelected($event)" id="Dashboard">
+                <li v-on:click="onMenuSelected($event)" id="Dashboard" class="active">
                     <router-link :to="{ name: 'home' }" class="nav-link" active-class="active">
                         <i class="fa fa-fw fa-home"></i> Dashboard
                     </router-link>
