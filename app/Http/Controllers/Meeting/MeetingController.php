@@ -1,26 +1,31 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Meeting;
 
 use App\Models\Meeting;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class MeetingController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return Meeting::all();
+        $userId = $request->user()->id;
+        $meetings = Meeting::where('userId', $userId)->get();
+        return response()->json($meetings);
     }
 
     public function show($id)
     {
-        return Meeting::find($id);
+        return response()->json(Meeting::find($id));
     }
 
     public function store(Request $request)
     {
+        //
+        // Validate request
+        //
         $rules = [
-            'userId' => 'required',
             'topic' => 'required|min:6',
             'when' => 'required',
             'duration' => 'required',
@@ -34,14 +39,31 @@ class MeetingController extends Controller
             'required' => 'Enter your :attribute first.'
         ];
 
-        $this->validate($request, $rules, $errorMessage);
-        return Meeting::create($request->all());
+        $userId = $request->user()->id;
+        $request->validate($rules, $errorMessage);
+        
+        //
+        // Create new meeting record
+        //
+        $meeting = Meeting::firstOrCreate(
+            [ 'userId' => $userId , 
+              'topic' => $request->topic, 
+              'description' => $request->description,
+              'when' => $request->when,
+              'duration' => $request->duration,
+              'passcode' => $request->passcode,
+              'hostVideo' => $request->hostVideo,
+              'participantVideo' => $request->participantVideo,
+              'meetingLink' => $request->meetingLink]
+        );
+
+        $meeting->save();
+        return $meeting;
     }
 
     public function update(Request $request, $id)
     {
         $rules = [
-            'userId' => 'required',
             'topic' => 'required|min:6',
             'when' => 'required',
             'duration' => 'required',
@@ -55,7 +77,7 @@ class MeetingController extends Controller
             'required' => 'Enter your :attribute first.'
         ];
 
-        $this->validate($request, $rules, $errorMessage);
+        $request->validate($rules, $errorMessage);
 
         $meeting = Meeting::findOrFail($id);
         $meeting->update($request->all());
@@ -63,10 +85,11 @@ class MeetingController extends Controller
     }
 
 
-    public function delete($id)
+    public function delete(Request $request, $id)
     {
-        Meeting::find($id)->delete();
-        return 204;
+        Meeting::findOrFail($id)->delete();
+
+        return response(['message' => 'Deleted']);
     }
 
 
