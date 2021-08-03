@@ -12,12 +12,18 @@ class MeetingController extends Controller
     {
         $userId = $request->user()->id;
         $meetings = Meeting::where('userId', $userId)->get();
-        return response()->json($meetings);
+        return response()->json(['meetings'=>$meetings, 'status'=>'success'], 200);
     }
 
-    public function show($id)
+    public function show(Request $request, $id)
     {
-        return response()->json(Meeting::find($id));
+        $userId = $request->user()->id;
+        $meeting = Meeting::find($id);
+
+        if ($meeting)
+            return response()->json(['meeting'=>$meeting, 'status'=>'success'], 200);
+        else 
+            return response()->json(['status'=>'failed'], 404);
     }
 
     public function store(Request $request)
@@ -58,7 +64,7 @@ class MeetingController extends Controller
         );
 
         $meeting->save();
-        return $meeting;
+        return response()->json(['meeting'=>$meeting, 'status'=>'success'], 201);
     }
 
     public function update(Request $request, $id)
@@ -81,15 +87,20 @@ class MeetingController extends Controller
 
         $meeting = Meeting::findOrFail($id);
         $meeting->update($request->all());
-        return $meeting;
+        return response()->json(['meeting'=>$meeting, 'status'=>'success'], 200);
     }
 
 
-    public function delete(Request $request, $id)
+    public function destroy(Request $request, $id)
     {
-        Meeting::findOrFail($id)->delete();
-
-        return response(['message' => 'Deleted']);
+        $meeting = Meeting::find($id);
+        if ($meeting) {
+            $meeting->delete();
+            return response()->json(['message' => 'Deleted'], 200);
+        }
+        else {
+            return response()->json(['message' => 'Deleted'], 404);
+        }
     }
 
 

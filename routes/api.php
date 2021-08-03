@@ -31,11 +31,7 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::patch('settings/profile', [ProfileController::class, 'update']);
     Route::patch('settings/password', [PasswordController::class, 'update']);
 
-    Route::get('/meeting', [MeetingController::class, 'index']);
-    Route::get('/meeting/{id}', [MeetingController::class, 'show']);
-    Route::post('/meeting', [MeetingController::class, 'store']);
-    Route::put('/meeting/{id}', [MeetingController::class, 'update']);
-    Route::delete('/meeting/{id}', [MeetingController::class, 'delete']);
+    Route::apiResource('meeting', MeetingController::class);
 });
 
 Route::group(['middleware' => 'guest:api'], function () {
