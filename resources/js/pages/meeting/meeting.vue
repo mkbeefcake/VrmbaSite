@@ -2,6 +2,11 @@
 <div class="content">
     <div class="row">
         <div class="col-lg-7">
+            <card :title="$t('My meetings')">
+                <label class="btn btn-primary text-md-right btn-simple active" v-on:click="onScheduleMeeting">Schedule Meeting</label>
+            </card>
+        </div>
+        <div class="col-lg-5">
             <card>
                 <div class="form-group row">
                     <label class="col-md-4 col-form-label text-md-left">Meeting invitation link: </label>
@@ -9,8 +14,6 @@
                     <label class="btn btn-primary btn-simple active" v-on:click="onStartMeeting">Start Meeting</label>
                 </div>
             </card>
-        </div>
-        <div class="col-lg-5">
         </div>
     </div>
 </div>
@@ -37,6 +40,9 @@ export default {
         return { title: this.$t('meeting') }
     },
     methods: {
+        onScheduleMeeting: function(event) {
+            this.$router.push({ name: 'schedule', params: { } })
+        },
         onStartMeeting: function(event) {
             ProtocolCheck("vrmba://" + this.meetingLink,
                 function () {

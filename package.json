@@ -22,12 +22,12 @@
     "js-cookie": "^2.2.1",
     "popper.js": "^1.16.1",
     "sweetalert2": "^10.9.0",
+    "v-calendar": "^2.3.2",
     "vform": "^1.0.1",
     "vue": "^2.6.14",
     "vue-i18n": "^8.22.1",
     "vue-meta": "^2.4.0",
     "vue-router": "^3.4.8",
-    "vue-sweet-calendar": "^0.4.1",
     "vuex": "^3.5.1",
     "vuex-router-sync": "^5.0.0"
   },
